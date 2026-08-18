@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Lecture Note Summary</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- Lecture Materials -->
+<section class="card">
+
+    <div class="section-header">
+        <div>
+            <h2>Lecture Materials</h2>
+
+            <p class="section-description">
+                Upload your lecture materials for AI analysis.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Upload Area -->
+    <div id="upload-area" class="upload-area">
+
+        <div class="upload-icon">
+            📚
+        </div>
+
+        <h3>
+            Drag & drop your lecture files here
+        </h3>
+
+        <p>or</p>
+
+        <input
+            type="file"
+            id="file-input"
+            multiple
+            accept=".pptx,.pdf,.docx,.xlsx,.xls,.txt"
+        >
+
+        <label
+            for="file-input"
+            class="button"
+        >
+            Choose Files
+        </label>
+
+        <p class="supported-formats">
+            Supported: PPTX, PDF, DOCX, XLSX, XLS and TXT
+        </p>
+
+    </div>
+
+
+    <!-- Selected Files -->
+    <div id="file-list"></div>
+
+
+    <!-- Waiting Notice -->
+    <div class="waiting-notice">
+
+        <span>⏳</span>
+
+        <span>
+            The larger your files are, or the more files you upload,
+            the longer AI analysis may take.
+        </span>
+
+    </div>
+
+
+    <!-- Lecture Summary Progress -->
+    <div
+        class="generation-progress"
+        id="summary-progress"
+    >
+
+        <div class="progress-header">
+
+            <span id="summary-progress-status">
+                Preparing...
+            </span>
+
+            <span id="summary-progress-percent">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="progress-track">
+
+            <div
+                id="summary-progress-bar"
+                class="progress-bar"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Lecture Summary Buttons -->
+    <div class="button-row">
+
+        <button
+            id="generate-summary-button"
+        >
+            Generate Lecture Summary
+        </button>
+
+
+        <button
+            id="cancel-summary-button"
+            class="cancel-button"
+            hidden
+        >
+            Cancel
+        </button>
+
+
+        <button
+            id="clear-files-button"
+            class="clear-button"
+        >
+            Clear Files
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- Exam Tips -->
+<section class="card">
+
+    <h2>
+        Exam Tips
+        <span>(Optional)</span>
+    </h2>
+
+    <p class="section-description">
+        Add any hints or topics provided by your lecturer.
+        The AI will use them to help prioritize your revision.
+    </p>
+
+
+    <textarea
+        id="exam-tips"
+        placeholder="Example: Focus on Topic 5 and calculations..."
+    ></textarea>
+
+</section>
+
+
+
+<!-- Lecture Summary -->
+<section class="card">
+
+    <h2>
+        Lecture Summary
+    </h2>
+
+
+    <div id="summary-result">
+
+        <p class="placeholder">
+            Your lecture summary will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- Exam Preparation -->
+<section class="card">
+
+    <h2>
+        Exam Preparation
+    </h2>
+
+
+    <p class="section-description">
+        Generate a study guide based on your uploaded lecture
+        materials and optional exam tips.
+    </p>
+
+
+    <!-- Exam Preparation Progress -->
+    <div
+        class="generation-progress"
+        id="exam-progress"
+    >
+
+        <div class="progress-header">
+
+            <span id="exam-progress-status">
+                Preparing...
+            </span>
+
+            <span id="exam-progress-percent">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="progress-track">
+
+            <div
+                id="exam-progress-bar"
+                class="progress-bar"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Exam Preparation Buttons -->
+    <div class="button-row">
+
+        <button
+            id="generate-exam-button"
+        >
+            Generate Exam Preparation
+        </button>
+
+
+        <button
+            id="cancel-exam-button"
+            class="cancel-button"
+            hidden
+        >
+            Cancel
+        </button>
+
+    </div>
+
+
+    <!-- Exam Preparation Result -->
+    <div id="exam-preparation-result">
+
+        <p class="placeholder">
+            Your AI exam preparation will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- AI Chat -->
+<section class="card chat-card">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                AI Study Assistant
+            </h2>
+
+            <p class="section-description">
+                Ask questions about your uploaded lectures.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Chat Messages -->
+    <div id="chat-box"></div>
+
+
+    <!-- Chat Input -->
+    <div class="chat-input">
+
+        <input
+            type="text"
+            id="chat-message"
+            placeholder="Ask something about your lectures..."
+        >
+
+
+        <button
+            id="send-button"
+        >
+            Send
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
